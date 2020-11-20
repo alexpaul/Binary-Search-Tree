@@ -47,11 +47,43 @@ Algorithm to insert values into a Binary Search Tree.
 * 
 
 ```swift 
+func insert(_ rootNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
+  let newNode = BinaryTreeNode(value)
+  guard let _ = rootNode else {
+    return newNode
+  }
+  
+  if value < rootNode!.value {
+    rootNode?.leftChild = newNode
+  }
+  
+  if value > rootNode!.value {
+    rootNode?.rightChild = newNode
+  }
+  
+  return rootNode
+}
 ```
 
 ## Traverse
 
 ```swift 
+func inOrderTraversal(_ rootNode: BinaryTreeNode?) {
+  guard let _ = rootNode else { return }
+  if let leftChild = rootNode?.leftChild {
+    inOrderTraversal(leftChild)
+  }
+  print(rootNode!.value)
+  if let rightChild = rootNode?.rightChild {
+    inOrderTraversal(rightChild)
+  }
+}
+
+let treeNode = insert(nil, 12)
+insert(treeNode, 10)
+insert(treeNode, 15)
+
+inOrderTraversal(treeNode) // 10 12 15
 ```
 
 ## Search 
