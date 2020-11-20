@@ -41,6 +41,8 @@ class BinaryTreeNode<T> {
 
 ## Insert
 
+![insertion in a BST](https://user-images.githubusercontent.com/1819208/99793072-135b3d00-2af6-11eb-9e41-bbc429a892c7.jpg)
+
 Algorithm to insert values into a Binary Search Tree. 
 
 * In the tree is empty the new value becomes the root. 
