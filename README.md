@@ -39,7 +39,12 @@ class BinaryTreeNode<T> {
 }
 ```
 
-## Insert 
+## Insert
+
+Algorithm to insert values into a Binary Search Tree. 
+
+* In the tree is empty the new value becomes the root. 
+* 
 
 ```swift 
 ```
