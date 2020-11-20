@@ -20,12 +20,27 @@ class BinaryTreeNode<T> {
 ```swift 
 ```
 
+## Traverse
+
+```swift 
+```
+
 ## Search 
 
 ```swift 
 ```
 
 ## Delete 
+
+```swift 
+```
+
+## Height
+
+```swift 
+```
+
+## Balanced 
 
 ```swift 
 ```
