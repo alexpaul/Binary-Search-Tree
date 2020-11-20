@@ -54,11 +54,21 @@ func insert(_ rootNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
   }
   
   if value < rootNode!.value {
-    rootNode?.leftChild = newNode
+    if rootNode?.leftChild == nil {
+      rootNode?.leftChild = newNode
+      return rootNode
+    } else {
+      insert(rootNode?.leftChild, value)
+    }
   }
   
   if value > rootNode!.value {
-    rootNode?.rightChild = newNode
+    if rootNode?.rightChild == nil {
+      rootNode?.rightChild = newNode
+      return rootNode
+    } else {
+      insert(rootNode?.rightChild, value)
+    }
   }
   
   return rootNode
@@ -73,17 +83,21 @@ func inOrderTraversal(_ rootNode: BinaryTreeNode?) {
   if let leftChild = rootNode?.leftChild {
     inOrderTraversal(leftChild)
   }
-  print(rootNode!.value)
+  print(rootNode!.value, terminator: " ")
   if let rightChild = rootNode?.rightChild {
     inOrderTraversal(rightChild)
   }
 }
 
-let treeNode = insert(nil, 12)
-insert(treeNode, 10)
-insert(treeNode, 15)
+let treeNode = insert(nil, 10)
+insert(treeNode, 13)
+insert(treeNode, 7)
+insert(treeNode, 5)
+insert(treeNode, 11)
+insert(treeNode, 9)
+insert(treeNode, 16)
 
-inOrderTraversal(treeNode) // 10 12 15
+inOrderTraversal(treeNode) // 5 7 9 10 11 13 16
 ```
 
 ## Search 
