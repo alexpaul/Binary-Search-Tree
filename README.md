@@ -45,7 +45,7 @@ class BinaryTreeNode<T> {
 
 Algorithm to insert values into a Binary Search Tree. 
 
-1. If the tree is empty the new value becomes the root. 
+1. If the tree is empty the new node becomes the root. 
 2. If the value is less than the root and the root does not have a left child, insert the new node at the left child. 
 3. It the root does have a left child, keep doing the above steps recursively until there is no left child, then insert new node. 
 4. If the value is greater than the root and the root does not have a right child, insert the new node at the right child. 
