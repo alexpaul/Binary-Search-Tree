@@ -116,6 +116,8 @@ inOrderTraversal(treeNode) // 5 7 9 10 11 13 16
 
 ## Search 
 
+![](https://user-images.githubusercontent.com/1819208/99878738-6fe15980-2bd5-11eb-9980-372f9ff77293.jpg)
+
 ```swift 
 func search(_ treeNode: BinaryTreeNode?, _ value: Int) -> Bool {
   guard let _ = treeNode else {
