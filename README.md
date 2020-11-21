@@ -150,18 +150,3 @@ func search(_ treeNode: BinaryTreeNode?, _ value: Int) -> Bool {
 
 search(treeNode, 7) // true 
 ```
-
-## Delete 
-
-```swift 
-```
-
-## Height
-
-```swift 
-```
-
-## Balanced 
-
-```swift 
-```
