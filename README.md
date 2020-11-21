@@ -118,6 +118,12 @@ inOrderTraversal(treeNode) // 5 7 9 10 11 13 16
 
 ![](https://user-images.githubusercontent.com/1819208/99878738-6fe15980-2bd5-11eb-9980-372f9ff77293.jpg)
 
+Algorithm to insert values into a Binary Search Tree. 
+
+* If the root value equals to the search value, return true. 
+* If the value is less than the root value, search left subtree recursively. 
+* If the value is greater than the root value, search the right subtree recursively. 
+
 ```swift 
 func search(_ treeNode: BinaryTreeNode?, _ value: Int) -> Bool {
   guard let _ = treeNode else {
