@@ -103,12 +103,44 @@ insert(treeNode, 11)
 insert(treeNode, 9)
 insert(treeNode, 16)
 
+/*
+        10
+       /  \
+     7     13
+   /  \   /  \
+  5    9 11   16
+*/
+
 inOrderTraversal(treeNode) // 5 7 9 10 11 13 16
 ```
 
 ## Search 
 
 ```swift 
+func search(_ treeNode: BinaryTreeNode?, _ value: Int) -> Bool {
+  guard let _ = treeNode else {
+    return false
+  }
+  if treeNode!.value == value {
+    return true
+  }
+  if value > treeNode!.value {
+    return search(treeNode?.rightChild, value)
+  } else if value < treeNode!.value {
+    return search(treeNode?.leftChild, value)
+  }
+  return false
+}
+
+/*
+        10
+       /  \
+     7     13
+   /  \   /  \
+  5    9 11   16
+*/
+
+search(treeNode, 7) // true 
 ```
 
 ## Delete 
