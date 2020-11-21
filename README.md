@@ -29,11 +29,11 @@ A Binary Search Tree (BST) is a Binary Tree with the following restrictions:
 ## Binary Tree Node 
 
 ```swift 
-class BinaryTreeNode<T> {
-  var value: T
+class BinaryTreeNode {
+  var value: Int
   var leftChild: BinaryTreeNode?
   var rightChild: BinaryTreeNode?
-  init(_ value: T) {
+  init(_ value: Int) {
     self.value = value
   }
 }
