@@ -22,6 +22,8 @@ class BinaryTreeNode {
 
 ## Insert
 
+#### TODO (fix sketch below re: 7 node insertion should be left child)
+
 ![insertion in a BST](https://user-images.githubusercontent.com/1819208/99795727-47386180-2afa-11eb-9e6c-a809d0645c62.jpg)
 
 Algorithm to insert values into a Binary Search Tree. 
