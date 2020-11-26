@@ -70,13 +70,13 @@ func insert(_ treeNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
 ## Traverse
 
 ```swift 
-func inOrderTraversal(_ rootNode: BinaryTreeNode?) {
-  guard let _ = rootNode else { return }
-  if let leftChild = rootNode?.leftChild {
+func inOrderTraversal(_ treeNode: BinaryTreeNode?) {
+  guard let treeNode = treeNode else { return }
+  if let leftChild = treeNode.leftChild {
     inOrderTraversal(leftChild)
   }
-  print(rootNode!.value, terminator: " ")
-  if let rightChild = rootNode?.rightChild {
+  print(treeNode.value, terminator: " ") // "\n" => " "
+  if let rightChild = treeNode.rightChild {
     inOrderTraversal(rightChild)
   }
 }
