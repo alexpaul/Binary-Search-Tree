@@ -107,17 +107,29 @@ Algorithm to insert values into a Binary Search Tree.
 
 ```swift 
 func search(_ treeNode: BinaryTreeNode?, _ value: Int) -> Bool {
-  guard let _ = treeNode else {
+  // 1. check if the tree is empty
+  guard let treeNode = treeNode else {
     return false
   }
-  if treeNode!.value == value {
+  
+  // 2. if the value equal to the root, return true
+  if treeNode.value == value {
     return true
   }
-  if value > treeNode!.value {
-    return search(treeNode?.rightChild, value)
-  } else if value < treeNode!.value {
-    return search(treeNode?.leftChild, value)
+  
+  // 3. navigate to the left subtree if the value is
+  //    less than the root's value
+  if value < treeNode.value { // traverse left recursively
+    return search(treeNode.leftChild, value)
   }
+  
+  // 4. navigate to the right subtree if the value is greater than the
+  //    root's value
+  if value > treeNode.value { // traverse right recursively
+    return search(treeNode.rightChild, value)
+  }
+  
+  // 5. value does not exist in the tree
   return false
 }
 
