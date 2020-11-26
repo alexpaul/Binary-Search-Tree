@@ -39,27 +39,27 @@ func insert(_ treeNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
   let newNode = BinaryTreeNode(value)
   
   // 2. - if the tree is empty, newNode becomes the root
-  guard let _ = treeNode else {
+  guard let treeNode = treeNode else {
     return newNode
   }
   
   // 3. - if value is less than root's value go left
-  if value < treeNode!.value {
-    if treeNode!.leftChild == nil {
-      treeNode?.leftChild = newNode
+  if value < treeNode.value {
+    if treeNode.leftChild == nil {
+      treeNode.leftChild = newNode
       return treeNode
     } else {
-      insert(treeNode?.leftChild, value)
+      insert(treeNode.leftChild, value)
     }
   }
   
   // 4. - if value is greater than root's value go right
-  if value > treeNode!.value {
-    if treeNode!.rightChild == nil {
-      treeNode?.rightChild = newNode
+  if value > treeNode.value {
+    if treeNode.rightChild == nil {
+      treeNode.rightChild = newNode
       return treeNode
     } else {
-      insert(treeNode?.rightChild, value)
+      insert(treeNode.rightChild, value)
     }
   }
   
