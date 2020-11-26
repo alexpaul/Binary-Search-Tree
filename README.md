@@ -34,31 +34,36 @@ Algorithm to insert values into a Binary Search Tree.
 
 
 ```swift 
-func insert(_ rootNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
+func insert(_ treeNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
+  // 1. - create the new node
   let newNode = BinaryTreeNode(value)
-  guard let _ = rootNode else {
+  
+  // 2. - if the tree is empty, newNode becomes the root
+  guard let _ = treeNode else {
     return newNode
   }
   
-  if value < rootNode!.value {
-    if rootNode?.leftChild == nil {
-      rootNode?.leftChild = newNode
-      return rootNode
+  // 3. - if value is less than root's value go left
+  if value < treeNode!.value {
+    if treeNode!.leftChild == nil {
+      treeNode?.leftChild = newNode
+      return treeNode
     } else {
-      insert(rootNode?.leftChild, value)
+      insert(treeNode?.leftChild, value)
     }
   }
   
-  if value > rootNode!.value {
-    if rootNode?.rightChild == nil {
-      rootNode?.rightChild = newNode
-      return rootNode
+  // 4. - if value is greater than root's value go right
+  if value > treeNode!.value {
+    if treeNode!.rightChild == nil {
+      treeNode?.rightChild = newNode
+      return treeNode
     } else {
-      insert(rootNode?.rightChild, value)
+      insert(treeNode?.rightChild, value)
     }
   }
   
-  return rootNode
+  return treeNode
 }
 ```
 
