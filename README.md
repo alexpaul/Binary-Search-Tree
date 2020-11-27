@@ -153,6 +153,67 @@ search(treeNode, 7) // true
 
 ![Deleing from a BST](https://user-images.githubusercontent.com/1819208/100452792-d6f48780-3087-11eb-9651-642539fdffb7.jpg)
 
+```swift 
+func delete(_ treeNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
+  guard let treeNode = treeNode else { return nil }
+  
+  if value < treeNode.value {
+    treeNode.leftChild = delete(treeNode.leftChild, value)
+  }
+  
+  else if value > treeNode.value {
+    treeNode.rightChild = delete(treeNode.rightChild, value)
+  }
+  
+  else {
+    if treeNode.leftChild == nil {
+      return treeNode.rightChild
+    } else if treeNode.rightChild == nil {
+      return treeNode.leftChild
+    }
+    
+    treeNode.value = minValue(treeNode.rightChild)
+    
+    treeNode.rightChild = delete(treeNode.rightChild, treeNode.value)
+  }
+  
+  return treeNode
+}
+
+/*
+        10
+       /  \
+     7     13
+   /  \   /  \
+  5    9 11   16
+*/
+
+
+delete(rootNode, 5)
+inOrderTraversal(rootNode) // 7 9 10 11 13 16
+print()
+
+delete(rootNode, 7)
+inOrderTraversal(rootNode) // 9 10 11 13 16
+print()
+
+delete(rootNode, 10)
+inOrderTraversal(rootNode) // 9 11 13 16
+
+```
+
+```swift 
+func minValue(_ treeNode: BinaryTreeNode?) -> Int {
+  if treeNode == nil {
+    return 0
+  }
+  if treeNode?.leftChild != nil {
+    return minValue(treeNode?.leftChild)
+  }
+  return treeNode!.value
+}
+```
+
 ## Resources 
 
 1. [GeeksForGeeks - Delete a node from a BST](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/)
