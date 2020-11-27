@@ -155,25 +155,39 @@ search(treeNode, 7) // true
 
 ```swift 
 func delete(_ treeNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
+  // 1.
+  // tree is empty return nil
   guard let treeNode = treeNode else { return nil }
   
+  // 2.
+  // value is less than root, delete and assign leftChild its new value
   if value < treeNode.value {
-    treeNode.leftChild = delete(treeNode.leftChild, value)
+    treeNode.leftChild = delete(treeNode.leftChild, value) // e.g returns nil to 7 node if deleting 5
   }
   
+  // 3.
+  // value is greater than root, delete and assign rightChild's its new value
   else if value > treeNode.value {
     treeNode.rightChild = delete(treeNode.rightChild, value)
   }
   
+  // 4.
+  // value is equal to the roots value
   else {
+    // 5.
+    // one child
     if treeNode.leftChild == nil {
       return treeNode.rightChild
     } else if treeNode.rightChild == nil {
       return treeNode.leftChild
     }
     
+    // 6.
+    // two children
+    // we use a helper function to get the in-order successor e.g if deleting 10 the in-order successor would be 11
+    // we first copy the in-order succsssor to the root
+    // then we delete the value we copied from the right subtree 
     treeNode.value = minValue(treeNode.rightChild)
-    
     treeNode.rightChild = delete(treeNode.rightChild, treeNode.value)
   }
   
