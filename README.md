@@ -149,6 +149,10 @@ func search(_ treeNode: BinaryTreeNode?, _ value: Int) -> Bool {
 search(treeNode, 7) // true 
 ```
 
+## Delete 
+
+![Deleing from a BST](https://user-images.githubusercontent.com/1819208/100452792-d6f48780-3087-11eb-9651-642539fdffb7.jpg)
+
 ## Resources 
 
 1. [GeeksForGeeks - Delete a node from a BST](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/)
