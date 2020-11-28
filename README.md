@@ -155,6 +155,20 @@ func search(_ treeNode: BinaryTreeNode?, _ value: Int) -> Bool {
 search(treeNode, 7) // true 
 ```
 
+## Minimum value in a Binary Search Tree 
+
+```swift 
+func minValue(_ treeNode: BinaryTreeNode?) -> Int {
+  if treeNode == nil {
+    return 0
+  }
+  if treeNode?.leftChild != nil {
+    return minValue(treeNode?.leftChild)
+  }
+  return treeNode!.value
+}
+```
+
 ## Delete 
 
 ![Deleing from a BST](https://user-images.githubusercontent.com/1819208/100452792-d6f48780-3087-11eb-9651-642539fdffb7.jpg)
