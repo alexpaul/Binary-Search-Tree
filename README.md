@@ -158,14 +158,12 @@ search(treeNode, 7) // true
 ## Minimum value in a Binary Search Tree 
 
 ```swift 
-func minValue(_ treeNode: BinaryTreeNode?) -> Int {
-  if treeNode == nil {
-    return 0
+func minValue(_ root: BinaryTreeNode?) -> Int {
+  guard let root = root else { return 0 }
+  if let leftChild = root.leftChild {
+    return minValue(leftChild)
   }
-  if treeNode?.leftChild != nil {
-    return minValue(treeNode?.leftChild)
-  }
-  return treeNode!.value
+  return root.value
 }
 ```
 
@@ -237,14 +235,12 @@ inOrderTraversal(rootNode) // 9 11 13 16
 ```
 
 ```swift 
-func minValue(_ treeNode: BinaryTreeNode?) -> Int {
-  if treeNode == nil {
-    return 0
+func minValue(_ root: BinaryTreeNode?) -> Int {
+  guard let root = root else { return 0 }
+  if let leftChild = root.leftChild {
+    return minValue(leftChild)
   }
-  if treeNode?.leftChild != nil {
-    return minValue(treeNode?.leftChild)
-  }
-  return treeNode!.value
+  return root.value
 }
 ```
 
