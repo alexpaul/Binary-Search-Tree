@@ -4,8 +4,19 @@ Binary Search Tree in Swift.
 
 A Binary Search Tree (BST) is a Binary Tree with the following restrictions: 
 
-* All the values in nodes to the left subtree of the root must be less than the roots' value 
-* All the values in nodes to the right subtree of the root must be greater than the roots' value 
+* All the values in nodes to the left subtree of the root must be less than the roots' value.
+* All the values in nodes to the right subtree of the root must be greater than the roots' value. 
+
+```swift 
+/*
+ Binary Search Tree
+        10
+       /  \
+     7     13
+   /  \   /  \
+  5    9 11   16
+*/
+```
 
 > Insertion, search and deletion on a Binary Search Tree is logorithmic `O(log n)` making it a very efficient data structure. 
 
