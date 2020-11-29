@@ -178,8 +178,8 @@ func minValue(_ root: BinaryTreeNode?) -> Int {
 Algorithm to delete a node from a Binary Search Tree. 
 
 * If the node is a leaf, simple delete that node. 
-* If the node has one child, copy the child's value to the node to be deleted then delete the child. 
-* If the node has two children, first copy the value of the in-order successor (the in-order successor as in the sketch above of the 10 node will be 11) of the node to be deleted, then delete the the in-order successor. 
+* If the node has one child, copy the child's value to the node then delete the child. 
+* If the node has two children, first copy the value of its the in-order successor of the node to be deleted (the in-order successor as in the sketch above of the 10 node will be 11), then delete the the in-order successor. 
 
 ```swift 
 func delete(_ root: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
