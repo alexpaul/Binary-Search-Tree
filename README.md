@@ -157,6 +157,8 @@ search(rootNode, 7) // true
 
 ## Minimum value in a Binary Search Tree 
 
+To find the minimum value in a Binary Search Tree is a trivial task that involves recursively visiting the left subtree until the last leaf. 
+
 ```swift 
 func minValue(_ root: BinaryTreeNode?) -> Int {
   guard let root = root else { return 0 }
