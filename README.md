@@ -9,7 +9,7 @@ A Binary Search Tree (BST) is a Binary Tree with the following restrictions:
 
 ```swift 
 /*
- Binary Search Tree
+ Valid Binary Search Tree
         10
        /  \
      7     13
