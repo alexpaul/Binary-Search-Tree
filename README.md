@@ -32,7 +32,7 @@ class BinaryTreeNode {
 
 ![insertion in a BST](https://user-images.githubusercontent.com/1819208/100107840-17f65d00-2e38-11eb-86d9-9b1739a8905c.PNG)
 
-Algorithm to insert values into a Binary Search Tree. 
+#### Algorithm to insert values into a Binary Search Tree. 
 
 1. If the tree is empty the new node becomes the root. 
 2. If the value is less than the root and the root does not have a left child, insert the new node at the left child. 
@@ -108,7 +108,7 @@ inOrderTraversal(rootNode) // 5 7 9 10 11 13 16
 
 ![search sketch](https://user-images.githubusercontent.com/1819208/99878738-6fe15980-2bd5-11eb-9980-372f9ff77293.jpg)
 
-Algorithm to search for a value in a Binary Search Tree. 
+#### Algorithm to search for a value in a Binary Search Tree. 
 
 * If the root value equals to the search value, return true. 
 * If the value is less than the root value, search left subtree recursively. 
@@ -173,7 +173,7 @@ func minValue(_ root: BinaryTreeNode?) -> Int {
 
 ![Deleing from a BST](https://user-images.githubusercontent.com/1819208/100540554-fb796c80-320b-11eb-8cf1-25942c87a5b1.jpg)
 
-Algorithm to delete a node from a Binary Search Tree. 
+#### Algorithm to delete a node from a Binary Search Tree. 
 
 * If the node is a leaf, simple delete that node. 
 * If the node has one child, copy the child's value to the node then delete the child. 
