@@ -15,7 +15,7 @@ A Binary Search Tree (BST) is a Binary Tree with the following restrictions:
 * To be able to **search** for a given node in a Binary Search Tree. 
 * To be able to **delete** a given value from a Binary Search Tree. 
 
-## Binary Tree Node 
+## 1. Binary Tree Node 
 
 ```swift 
 class BinaryTreeNode {
@@ -28,7 +28,7 @@ class BinaryTreeNode {
 }
 ```
 
-## Insert
+## 2. Insert
 
 ![insertion in a BST](https://user-images.githubusercontent.com/1819208/100107840-17f65d00-2e38-11eb-86d9-9b1739a8905c.PNG)
 
@@ -75,7 +75,7 @@ func insert(_ root: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
 }
 ```
 
-## Traverse
+## 3. Traverse
 
 ```swift 
 func inOrderTraversal(_ root: BinaryTreeNode?) {
@@ -108,7 +108,7 @@ insert(rootNode, 16)
 inOrderTraversal(rootNode) // 5 7 9 10 11 13 16
 ```
 
-## Search 
+## 4. Search 
 
 ![search sketch](https://user-images.githubusercontent.com/1819208/99878738-6fe15980-2bd5-11eb-9980-372f9ff77293.jpg)
 
@@ -157,7 +157,7 @@ func search(_ root: BinaryTreeNode?, _ value: Int) -> Bool {
 search(rootNode, 7) // true 
 ```
 
-## Minimum value in a Binary Search Tree 
+## 5. Minimum value in a Binary Search Tree 
 
 To find the minimum value in a Binary Search Tree the left subtree is visited recursively until the last leaf. This leaf node holds the minimum value by the nature of a Binary Search Tree. 
 
@@ -173,7 +173,7 @@ func minValue(_ root: BinaryTreeNode?) -> Int {
 
 #### Challenge: Write a function to find the maximum value in a Binary Search Tree? 
 
-## Delete 
+## 6. Delete 
 
 ![Deleing from a BST](https://user-images.githubusercontent.com/1819208/100540554-fb796c80-320b-11eb-8cf1-25942c87a5b1.jpg)
 
