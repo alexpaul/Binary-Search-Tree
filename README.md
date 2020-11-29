@@ -171,7 +171,7 @@ func minValue(_ root: BinaryTreeNode?) -> Int {
 
 ## Delete 
 
-![Deleing from a BST](https://user-images.githubusercontent.com/1819208/100540498-ab020f00-320b-11eb-8126-5915af5db8cf.PNG)
+![Deleing from a BST](https://user-images.githubusercontent.com/1819208/100540554-fb796c80-320b-11eb-8cf1-25942c87a5b1.jpg)
 
 ```swift 
 func delete(_ root: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
