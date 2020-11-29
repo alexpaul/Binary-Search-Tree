@@ -80,13 +80,9 @@ func insert(_ root: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
 ```swift 
 func inOrderTraversal(_ root: BinaryTreeNode?) {
   guard let root = root else { return }
-  if let leftChild = root.leftChild {
-    inOrderTraversal(leftChild)
-  }
+  inOrderTraversal(root.leftChild)
   print(root.value, terminator: " ") // "\n" => " "
-  if let rightChild = root.rightChild {
-    inOrderTraversal(rightChild)
-  }
+  inOrderTraversal(root.rightChild)
 }
 
 let rootNode = insert(nil, 10)
