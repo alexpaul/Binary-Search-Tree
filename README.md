@@ -81,7 +81,7 @@ func inOrderTraversal(_ root: BinaryTreeNode?) {
   if let leftChild = root.leftChild {
     inOrderTraversal(leftChild)
   }
-  print(treeNode.value, terminator: " ") // "\n" => " "
+  print(root.value, terminator: " ") // "\n" => " "
   if let rightChild = root.rightChild {
     inOrderTraversal(rightChild)
   }
