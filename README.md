@@ -108,9 +108,9 @@ inOrderTraversal(rootNode) // 5 7 9 10 11 13 16
 
 ## Search 
 
-![](https://user-images.githubusercontent.com/1819208/99878738-6fe15980-2bd5-11eb-9980-372f9ff77293.jpg)
+![search sketch](https://user-images.githubusercontent.com/1819208/99878738-6fe15980-2bd5-11eb-9980-372f9ff77293.jpg)
 
-Algorithm to insert values into a Binary Search Tree. 
+Algorithm to search for a value in a Binary Search Tree. 
 
 * If the root value equals to the search value, return true. 
 * If the value is less than the root value, search left subtree recursively. 
@@ -172,6 +172,12 @@ func minValue(_ root: BinaryTreeNode?) -> Int {
 ## Delete 
 
 ![Deleing from a BST](https://user-images.githubusercontent.com/1819208/100540554-fb796c80-320b-11eb-8cf1-25942c87a5b1.jpg)
+
+Algorithm to delete a node from a Binary Search Tree. 
+
+* If the node is a leaf, simple delete that node. 
+* If the node has one child, copy the child's value to the node to be deleted then delete the child. 
+* If the node has two children, first copy the value of the in-order successor (the in-order successor as in the sketch above of the 10 node will be 11) of the node to be deleted, then delete the the in-order successor. 
 
 ```swift 
 func delete(_ root: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
