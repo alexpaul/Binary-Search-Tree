@@ -9,9 +9,9 @@ A Binary Search Tree (BST) is a Binary Tree with the following restrictions:
 
 ## Objectives 
 
-* To be able to insert a new node into a Binary Search Tree. 
-* To be able to search for a given node in a Binary Search Tree. 
-* To be able to delete a given value from a Binary Search Tree. 
+* To be able to **insert** a new node into a Binary Search Tree. 
+* To be able to **search** for a given node in a Binary Search Tree. 
+* To be able to **delete** a given value from a Binary Search Tree. 
 
 ## Binary Tree Node 
 
