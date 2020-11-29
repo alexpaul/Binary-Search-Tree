@@ -40,60 +40,60 @@ Algorithm to insert values into a Binary Search Tree.
 
 
 ```swift 
-func insert(_ treeNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
+func insert(_ root: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
   // 1. - create the new node
   let newNode = BinaryTreeNode(value)
   
   // 2. - if the tree is empty, newNode becomes the root
-  guard let treeNode = treeNode else {
+  guard let root = root else {
     return newNode
   }
   
   // 3. - if value is less than root's value go left
-  if value < treeNode.value {
-    if treeNode.leftChild == nil {
-      treeNode.leftChild = newNode
-      return treeNode
+  if value < root.value {
+    if root.leftChild == nil {
+      root.leftChild = newNode
+      return root
     } else {
-      insert(treeNode.leftChild, value)
+      insert(root.leftChild, value)
     }
   }
   
   // 4. - if value is greater than root's value go right
-  if value > treeNode.value {
-    if treeNode.rightChild == nil {
-      treeNode.rightChild = newNode
-      return treeNode
+  if value > root.value {
+    if root.rightChild == nil {
+      root.rightChild = newNode
+      return root
     } else {
-      insert(treeNode.rightChild, value)
+      insert(root.rightChild, value)
     }
   }
   
-  return treeNode
+  return root
 }
 ```
 
 ## Traverse
 
 ```swift 
-func inOrderTraversal(_ treeNode: BinaryTreeNode?) {
-  guard let treeNode = treeNode else { return }
-  if let leftChild = treeNode.leftChild {
+func inOrderTraversal(_ root: BinaryTreeNode?) {
+  guard let root = root else { return }
+  if let leftChild = root.leftChild {
     inOrderTraversal(leftChild)
   }
   print(treeNode.value, terminator: " ") // "\n" => " "
-  if let rightChild = treeNode.rightChild {
+  if let rightChild = root.rightChild {
     inOrderTraversal(rightChild)
   }
 }
 
-let treeNode = insert(nil, 10)
-insert(treeNode, 13)
-insert(treeNode, 7)
-insert(treeNode, 5)
-insert(treeNode, 11)
-insert(treeNode, 9)
-insert(treeNode, 16)
+let rootNode = insert(nil, 10)
+insert(rootNode, 13)
+insert(rootNode, 7)
+insert(rootNode, 5)
+insert(rootNode, 11)
+insert(rootNode, 9)
+insert(rootNode, 16)
 
 /*
         10
@@ -103,7 +103,7 @@ insert(treeNode, 16)
   5    9 11   16
 */
 
-inOrderTraversal(treeNode) // 5 7 9 10 11 13 16
+inOrderTraversal(rootNode) // 5 7 9 10 11 13 16
 ```
 
 ## Search 
@@ -117,27 +117,27 @@ Algorithm to insert values into a Binary Search Tree.
 * If the value is greater than the root value, search the right subtree recursively. 
 
 ```swift 
-func search(_ treeNode: BinaryTreeNode?, _ value: Int) -> Bool {
+func search(_ root: BinaryTreeNode?, _ value: Int) -> Bool {
   // 1. check if the tree is empty
-  guard let treeNode = treeNode else {
+  guard let root = root else {
     return false
   }
   
   // 2. if the value equal to the root, return true
-  if treeNode.value == value {
+  if root.value == value {
     return true
   }
   
   // 3. navigate to the left subtree if the value is
   //    less than the root's value
-  if value < treeNode.value { // traverse left recursively
-    return search(treeNode.leftChild, value)
+  if value < root.value { // traverse left recursively
+    return search(root.leftChild, value)
   }
   
   // 4. navigate to the right subtree if the value is greater than the
   //    root's value
-  if value > treeNode.value { // traverse right recursively
-    return search(treeNode.rightChild, value)
+  if value > root.value { // traverse right recursively
+    return search(root.rightChild, value)
   }
   
   // 5. value does not exist in the tree
@@ -152,7 +152,7 @@ func search(_ treeNode: BinaryTreeNode?, _ value: Int) -> Bool {
   5    9 11   16
 */
 
-search(treeNode, 7) // true 
+search(rootNode, 7) // true 
 ```
 
 ## Minimum value in a Binary Search Tree 
@@ -172,21 +172,21 @@ func minValue(_ root: BinaryTreeNode?) -> Int {
 ![Deleing from a BST](https://user-images.githubusercontent.com/1819208/100452792-d6f48780-3087-11eb-9651-642539fdffb7.jpg)
 
 ```swift 
-func delete(_ treeNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
+func delete(_ root: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
   // 1.
   // tree is empty return nil
-  guard let treeNode = treeNode else { return nil }
+  guard let root = root else { return nil }
   
   // 2.
   // value is less than root, delete and assign leftChild its new value
-  if value < treeNode.value {
-    treeNode.leftChild = delete(treeNode.leftChild, value) // e.g returns nil to 7 node if deleting 5
+  if value < root.value {
+    root.leftChild = delete(root.leftChild, value) // e.g returns nil to 7 node if deleting 5
   }
   
   // 3.
   // value is greater than root, delete and assign rightChild's its new value
-  else if value > treeNode.value {
-    treeNode.rightChild = delete(treeNode.rightChild, value)
+  else if value > root.value {
+    root.rightChild = delete(root.rightChild, value)
   }
   
   // 4.
@@ -194,10 +194,10 @@ func delete(_ treeNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
   else {
     // 5.
     // one child
-    if treeNode.leftChild == nil {
-      return treeNode.rightChild
-    } else if treeNode.rightChild == nil {
-      return treeNode.leftChild
+    if root.leftChild == nil {
+      return root.rightChild
+    } else if root.rightChild == nil {
+      return root.leftChild
     }
     
     // 6.
@@ -205,11 +205,11 @@ func delete(_ treeNode: BinaryTreeNode?, _ value: Int) -> BinaryTreeNode? {
     // we use a helper function to get the in-order successor e.g if deleting 10 the in-order successor would be 11
     // we first copy the in-order succsssor to the root
     // then we delete the value we copied from the right subtree 
-    treeNode.value = minValue(treeNode.rightChild)
-    treeNode.rightChild = delete(treeNode.rightChild, treeNode.value)
+    root.value = minValue(root.rightChild)
+    root.rightChild = delete(root.rightChild, root.value)
   }
   
-  return treeNode
+  return root
 }
 
 /*
