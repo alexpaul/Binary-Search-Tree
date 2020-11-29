@@ -243,8 +243,3 @@ func minValue(_ root: BinaryTreeNode?) -> Int {
   return root.value
 }
 ```
-
-## Resources 
-
-1. [GeeksForGeeks - Delete a node from a BST](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/)
-2. [GeeksForGeeks - Sorted Array to Balanced BST](https://www.geeksforgeeks.org/sorted-array-to-balanced-bst/?ref=lbp)
