@@ -15,6 +15,13 @@ A Binary Search Tree (BST) is a Binary Tree with the following restrictions:
      7     13
    /  \   /  \
   5    9 11   16
+  
+ Invalid Binary Search Tree
+        4
+      /   \
+     13     1
+   /  \   /  \
+  2    9 5    3
 */
 ```
 
