@@ -169,6 +169,8 @@ func minValue(_ root: BinaryTreeNode?) -> Int {
 }
 ```
 
+#### Challenge: Write a function to find the maximum value in a Binary Search Tree? 
+
 ## Delete 
 
 ![Deleing from a BST](https://user-images.githubusercontent.com/1819208/100540554-fb796c80-320b-11eb-8cf1-25942c87a5b1.jpg)
