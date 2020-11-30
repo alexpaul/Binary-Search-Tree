@@ -33,6 +33,8 @@ A Binary Search Tree (BST) is a Binary Tree with the following restrictions:
 * To be able to **search** for a given node in a Binary Search Tree. 
 * To be able to **delete** a given value from a Binary Search Tree. 
 
+[Link to completed Binary Search Tree](https://repl.it/@alexpaul/BinarySearchTree#main.swift)
+
 ## 1. Binary Tree Node 
 
 ```swift 
