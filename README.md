@@ -278,17 +278,23 @@ func minValue(_ root: BinaryTreeNode?) -> Int {
 
 ```swift 
 func convertToBST(_ arr: [Int], _ low: Int, _ high: Int, _ root: BinaryTreeNode?) -> BinaryTreeNode? {
+  // 1. - base case when we have one node 
   if low > high { 
     return root
   }
+  // 2. - calculate the middle index
   let midIndex = (low + high) / 2 
-  let newNode = BinaryTreeNode(arr[midIndex])
-
-  let root = newNode
-
+  
+  // 3. - create the new root from the middle index
+  let root = BinaryTreeNode(arr[midIndex])
+  
+  // 4. - recursively perform conversion on the left subtree 
   root.left = convertToBST(arr, low, midIndex - 1, root.left)
+  
+  // 5. - recursively perform conversion on the right subtree
   root.right = convertToBST(arr, midIndex + 1, high, root.right)
-    
+  
+  // 6. - return the converted BST 
   return root
 }
 
