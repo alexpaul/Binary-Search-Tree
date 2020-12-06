@@ -271,3 +271,28 @@ func minValue(_ root: BinaryTreeNode?) -> Int {
   return root.value
 }
 ```
+
+## 7. Convert an array to a Binary Search Tree 
+
+![array to BST sketch](https://user-images.githubusercontent.com/1819208/101278131-591b3500-3787-11eb-8852-821e0c814044.jpg)
+
+```swift 
+func convertToBST(_ arr: [Int], _ low: Int, _ high: Int, _ root: BinaryTreeNode?) -> BinaryTreeNode? {
+  if low > high { 
+    return root
+  }
+  let midIndex = (low + high) / 2 
+  let newNode = BinaryTreeNode(arr[midIndex])
+
+  let root = newNode
+
+  root.left = convertToBST(arr, low, midIndex - 1, root.left)
+  root.right = convertToBST(arr, midIndex + 1, high, root.right)
+    
+  return root
+}
+
+let arr = [3, 10, 7, 5, 1].sorted() 
+let bst = convertToBST(arr, 0, arr.count - 1, nil)
+inOrderTraversal(bst) // 1 3 5 7 10
+```
