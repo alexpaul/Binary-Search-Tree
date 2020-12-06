@@ -302,3 +302,21 @@ let arr = [3, 10, 7, 5, 1].sorted()
 let bst = convertToBST(arr, 0, arr.count - 1, nil)
 inOrderTraversal(bst) // 1 3 5 7 10
 ```
+
+#### Challenge: convert a degenerate BST or a non-balanced BST to a balanced Binary Search Tree
+
+```swift 
+             89                                  20 
+            /                                 /     \
+           66                               12      66
+          /                                /  \    /   \
+         34                               5   17  34   89   height = 3
+        /
+       20                  => 
+      /
+     17
+    /
+   12
+  /
+ 5  height = 7
+```
