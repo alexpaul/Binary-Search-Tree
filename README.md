@@ -320,3 +320,5 @@ inOrderTraversal(bst) // 1 3 5 7 10
   /
  5  height = 7
 ```
+
+[Solution](https://repl.it/@alexpaul/ConvertUnbalancedTree#main.swift)
